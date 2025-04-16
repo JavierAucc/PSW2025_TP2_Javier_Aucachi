@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="footer row ">
+        <div class="formulario col-md-4 d-flex justify-content-center align-items-center bg-transparent ">
+            <div class="card shadow-sm border-5 rounded-3">
+                 <div class="card-body text-center">
+                    <h5 class="card-title">¡Suscríbete a nuestro boletín!</h5>
+                    <p class="card-text">Recibe las últimas novedades, promociones y consejos de entrenamiento directamente en tu correo.</p>
+                     <form id="subscriptionForm">
+                        <div class="mb-3">
+                        <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo electrónico" required>
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+            <!-- Modal de agradecimiento -->
+            <div class="modal fade" id="thankYouModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content text-center">
+                        <div class="modal-body">
+                            <h5 class="mb-3">¡Gracias por suscribirte!</h5>
+                            <p>Te has suscrito exitosamente a nuestro Comunidad.</p>
+                            <button type="button" class="btn btn-success mt-3" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="redes col-4 d-flex flex-column justify-content-center align-items-center text-center bg-transparent ">
+            <h5 class="fw-bold text-light ">Síguenos en nuestras redes sociales</h5>
+            <div class="d-flex justify-content-center flex-wrap">
+                <a href="#" class="icon-size bg-transparent me-2">
+                    <img src="../Multimedia/images/icons/facebook-icon.png" alt="Facebook" class="img-fluid" style="width: 32px; height: 32px;">
+                </a>
+                <a href="#" class="icon-size bg-transparent me-2">
+                    <img src="../Multimedia/images/icons/instagram-icon.png" alt="Instagram" class="img-fluid" style="width: 32px; height: 32px;">
+                </a>
+                <a href="#" class="icon-size bg-transparent me-2">
+                    <img src="../Multimedia/images/icons/twitter-icon.png" alt="Twitter" class="img-fluid" style="width: 32px; height: 32px;">
+                </a>
+                <a href="#" class="icon-size bg-transparent me-2">
+                    <img src="../Multimedia/images/icons/tiktok-icon.png" alt="TikTok" class="img-fluid" style="width: 32px; height: 32px;">
+                </a>
+                <a href="#" class="icon-size bg-transparent me-2">
+                    <img src="../Multimedia/images/icons/youtube-icon.png" alt="YouTube" class="img-fluid" style="width: 32px; height: 32px;">
+                </a>
+            </div>
+            <p class="text-light ">Estamos aquí para ayudarte con cualquier consulta.</p>
+            <p class="text-light ">No dudes en contactarnos para más información.</p>
+            <h5 class="text-light">Contacto: newellsito@gmail.com</h5>
+            <h5 class="text-light">desarrollado por: JaviDev</h5>
+            
+        </div>
+        <div class="ubicacion col-4 d-flex justify-content-center align-items-center bg-transparent text-center">
+            <div class="container my-4 bg-transparent">
+                <h5 class="text-center text-light">Nuestra Ubicación</h5>
+                <h5 class="text-center text-light">Ing. Mario Italo Palanca 10, Y4600 San Salvador de Jujuy, Jujuy</h5>
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.4981779725604!2d-65.2933567!3d-24.189325999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f5bca584281%3A0xb1d519d50cac526d!2sFacultad%20de%20Ingenier%C3%ADa%20-%20UNJu!5e0!3m2!1ses-419!2sar!4v1744842807627!5m2!1ses-419!2sar" 
+                    width="2000" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#subscriptionForm').on('submit', function (e) {
+                e.preventDefault(); // Evita el envío del formulario
+
+                // Eliminar cualquier spinner existente para evitar duplicados
+                $('#loadingSpinner').remove();
+
+                // Mostrar spinner de carga
+                const spinner = `
+                    <div class="text-center my-3" id="loadingSpinner">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Cargando...</span>
+                        </div>
+                    </div>
+                `;
+                $(this).append(spinner);
+
+                // Simular un retraso de carga antes de mostrar el modal
+                setTimeout(() => {
+                    $('#loadingSpinner').remove(); // Eliminar el spinner
+                    const modal = new bootstrap.Modal(document.getElementById('thankYouModal')); // Inicializar el modal
+                    modal.show(); // Mostrar el modal
+                }, 2000); // 2 segundos de retraso
+            });
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

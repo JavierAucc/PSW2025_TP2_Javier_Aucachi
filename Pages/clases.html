@@ -1,0 +1,214 @@
+<HTML:5>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases - Esparta Gym</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1 class="name-gym">Clases</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="entrenadores.html">Entrenadores</a></li>
+                    <li><a href="precios.html">Precios</a></li>
+                    <li><a href="formulario.html">Inscripcion</a></li>
+                    <li><a href="revista.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="main-container">
+        <section class="hero">
+            <video autoplay muted loop class="hero-video">
+                <source src="../Multimedia/videos/entrenamiento.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de videos.
+            </video>
+            <div class="hero-content">
+                <!-- Sistema de Filtrado -->
+                <section class="filter-section">
+                    <h2>Filtrar por categoría</h2>
+                    <div class="filters">
+                        <input type="radio" id="all" name="category" checked>
+                        <label for="all">Todas</label>
+        
+                        <input type="radio" id="musculacion" name="category">
+                        <label for="musculacion">Musculación</label>
+        
+                        <input type="radio" id="crossfit" name="category">
+                        <label for="crossfit">CrossFit</label>
+        
+                        <input type="radio" id="yoga" name="category">
+                        <label for="yoga">Yoga</label>
+        
+                        <input type="radio" id="spinning" name="category">
+                        <label for="spinning">Spinning</label>
+
+
+                    </div>
+        
+                    <!-- Galería tipo Masonry -->
+                    <div class="gallery">
+                        <div class="item musculacion"><img src="../Multimedia/images/clases/musculacion 3.PNG" alt="Musculación"></div>
+                        <div class="item crossfit"><img src="../Multimedia/images/clases/crossfit 1.PNG" alt="CrossFit"></div>
+                        <div class="item yoga"><img src="../Multimedia/images/clases/yoga 1.PNG" alt="Yoga"></div>
+                        <div class="item spinning"><img src="../Multimedia/images/clases/sppining 1.PNG" alt="Spinning"></div>
+                        <div class="item musculacion"><img src="../Multimedia/images/clases/musculacion 1.PNG" alt="Musculación"></div>
+                        <div class="item crossfit"><img src="../Multimedia/images/clases/crossfit 2.PNG" alt="CrossFit"></div>
+                        <div class="item yoga"><img src="../Multimedia/images/clases/yoga 2.PNG" alt="Yoga"></div>
+                        <div class="item spinning"><img src="../Multimedia/images/clases/sppining 2.PNG" alt="Spinning"></div>
+                        <div class="item musculacion"><img src="../Multimedia/images/clases/musculacion 2.PNG" alt="Musculación"></div>
+                        <div class="item crossfit"><img src="../Multimedia/images/clases/crossfit 3.PNG" alt="CrossFit"></div>
+                        <div class="item yoga"><img src="../Multimedia/images/clases/yoga 3.PNG" alt="Yoga"></div>
+                        <div class="item spinning"><img src="../Multimedia/images/clases/sppining 3.PNG" alt="Spinning"></div>
+                        <div class="item musculacion"><img src="../Multimedia/images/clases/musculacion 4.PNG" alt="Musculación"></div>
+                        <div class="item crossfit"><img src="../Multimedia/images/clases/crossfit 4.PNG" alt="CrossFit"></div>
+                        <div class="item yoga"><img src="../Multimedia/images/clases/yoga 4.PNG" alt="Yoga"></div>
+                        <div class="item spinning"><img src="../Multimedia/images/clases/sppining 4.PNG" alt="Spinning"></div>
+                        <div class="item musculacion"><img src="../Multimedia/images/clases/musculacion 5.PNG" alt="Musculación"></div>
+                        <div class="item crossfit"><img src="../Multimedia/images/clases/crossfit 5.PNG" alt="CrossFit"></div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </div>
+     <!-- Tabla de horarios -->
+     <section class="schedule-section">
+        <h2>Horarios Semanales</h2>
+        <table class="schedule">
+            <thead>
+                <tr>
+                    <th>Día</th>
+                    <th>Musculación</th>
+                    <th>CrossFit</th>
+                    <th>Yoga</th>
+                    <th>Spinning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lunes a Viernes</td>
+                    <td>8:00 - 10:00</td>
+                    <td>10:00 - 12:00</td>
+                    <td>18:00 - 20:00</td>
+                    <td>20:00 - 22:00</td>
+                </tr>
+                <tr>
+                    <td>Sabados</td>
+                    <td>8:00 - 10:00</td>
+                    <td>10:00 - 12:00</td>
+                    <td>12:00 - 14:00</td>
+                    <td>14:00 - 16:00</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <!-- Suscripción -->
+            <div class="newsletter">
+                <h3>Suscríbete para mantenerte Informado</h3>
+                <form action="#" method="post">
+                    <input type="email" placeholder="Ingresa tu correo electrónico" required>
+                    <button type="button" id="subscribe-btn">Suscribirse</button>
+                        <!-- Modal -->
+                        <dialog class="modal" id="mainModal">
+                            <h1>¡Gracias por suscribirte!</h1>
+                            <p>Recibirás nuestras novedades y promociones en tu correo electrónico.</p>
+                            <p>¡Bienvenido a la comunidad de Esparta Gym!</p>
+                            <button type="button" id="close-btn">Cerrar</button>
+                        </dialog>
+                </form>
+            </div>
+            <!-- Contacto -->
+            <div class="social-links">
+                <h3>Contacto</h3>
+                <p>Correo: newellsito@gmail.com</p>
+                <p>Teléfono: +54 978941354</p>
+                <ul>
+                    <li><a href="https://www.unju.edu.ar/" target="_blank"><img src="../Multimedia/images/icons/facebook-icon.png" alt="Facebook"></a></li>
+                    <li><a href="https://www.unju.edu.ar/" target="_blank"><img src="../Multimedia/images/icons/instagram-icon.png" alt="Instagram"></a></li>
+                    <li><a href="https://www.unju.edu.ar/" target="_blank"><img src="../Multimedia/images/icons/tiktok-icon.png" alt="TikTok"></a></li>
+                    <li><a href="https://www.unju.edu.ar/" target="_blank"><img src="../Multimedia/images/icons/youtube-icon.png" alt="YouTube"></a></li>
+                    <li><a href="https://www.unju.edu.ar/" target="_blank"><img src="../Multimedia/images/icons/twitter-icon.png" alt="Twitter"></a></li>
+                </ul>
+            </div>
+            <!-- Mapa -->
+            <div class="map">
+                <h3>Encuéntranos aquí</h3>
+                <p>Av. Bolivia 1239, San Salvador de Jujuy, Jujuy, Argentina</p>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.4981779725604!2d-65.2933567!3d-24.189325999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f5bca584281%3A0xb1d519d50cac526d!2sFacultad%20de%20Ingenier%C3%ADa%20-%20UNJu!5e0!3m2!1ses-419!2sar!4v1743904644566!5m2!1ses-419!2sar" 
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </iframe>
+            </div>
+        </div>
+    
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Esparta Gym. Todos los derechos reservados.</p>
+            <p>Desarrollado por JaviDev</p>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+    <!-- script para el modal del footer-->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('mainModal');
+            const subscribeBtn = document.getElementById('subscribe-btn');
+            const closeBtn = document.getElementById('close-btn');
+
+            // Asegúrate de que el modal esté cerrado al cargar
+            if (modal.open) modal.close();
+
+            // Función para mostrar el modal
+            function openModal() {
+                if (typeof modal.showModal === 'function') {
+                    modal.showModal();
+                }
+            }
+
+            // Función para cerrar el modal
+            function closeModal() {
+                if (typeof modal.close === 'function') {
+                    modal.close();
+                }
+            }
+
+            // Mostrar el modal al hacer clic en "Suscribirse"
+            subscribeBtn.addEventListener('click', openModal);
+
+            // Cerrar el modal al hacer clic en "Cerrar"
+            closeBtn.addEventListener('click', closeModal);
+        });    
+    </script>
+    <!-- script para el filtrado -->
+    <script>
+        document.querySelectorAll('input[name="category"]').forEach((input) => {
+            input.addEventListener('change', (event) => {
+                const selectedCategory = event.target.id;
+                const items = document.querySelectorAll('.gallery .item');
+    
+                items.forEach((item) => {
+                    if (selectedCategory === 'all' || item.classList.contains(selectedCategory)) {
+                        item.style.display = 'block'; // Muestra el elemento
+                    } else {
+                        item.style.display = 'none'; // Oculta el elemento
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+</HTML:5>

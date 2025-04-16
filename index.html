@@ -1,0 +1,103 @@
+<HTML:5>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP1 GYM</title>
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video autoplay loop muted playsinline class="video-background" id="video-background">
+        <source src="Multimedia/videos/fuegazo.mp4" type="video/mp4">
+        Tu navegador no soporta videos HTML:5.
+    </video>
+    <div class="container">
+
+        <div id="header"></div>
+
+        <div class="container row bg-transparent">
+            <div class="mini-hero col-4">
+                <div class="row text-center">
+                    <p class="frase1 text-light fw-bold fs-1 fs-md-2 fs-sm-4">¡El mejor lugar para lograr tus metas!</p>
+                </div>
+                   <div class="row align-items-center">
+                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                            <div class="carousel-item active" >
+                                <img src="Multimedia/images/gimnasio/gym1.jpeg" class="d-block w-100" alt="Entorno 1">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="2500">
+                                <img src="Multimedia/images/gimnasio/gym2.jpeg" class="d-block w-100" alt="Entorno 2">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="2500">
+                                <img src="Multimedia/images/gimnasio/gym3.jpeg" class="d-block w-100" alt="Entorno 3">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="2500">
+                                <img src="Multimedia/images/gimnasio/gym1.jpeg" class="d-block w-100" alt="Entorno 4">
+                            </div>
+                                <div class="carousel-item" data-bs-interval="2500">
+                                <img src="Multimedia/images/gimnasio/gym2.jpeg" class="d-block w-100" alt="Entorno 5">
+                            </div>
+                            </div>
+                        </div>
+                   </div>
+            </div>
+            <div class="col-8 position-relative ">
+                <video src="Multimedia/videos/entrenamiento.mp4" class="d-block w-100 h-100 " autoplay loop muted></video>
+                <div class="position-absolute top-50 start-50 translate-middle text-center ">
+                    <p class="frase2 text-light fw-bold text-light fw-bold fs-1 fs-md-2 fs-sm-4 bg-transparent">¡Prepárate para el desafío!</p>
+                </div>
+            </div>
+        </div>  
+        <div class="row  bg-transparent ">
+            <div class="col-4 d-flex justify-content-center align-items-center bg-transparent">
+                <div class="card" style="width: 18rem;">
+                    <img src="Multimedia/images/food/carnes.PNG" class="card-img-top" alt="Imagen de Carnes">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Importancia de Comer Carnes</h5>
+                        <p class="card-text">Alimentos ricos en proteínas que son esenciales para el desarrollo muscular.</p>
+                        <a href="#" class="btn btn-dark">Ir al Articulo</a>
+                    </div>
+                </div>
+            </div>
+             <div class="col-4 container text-center my-5 fs-1 fs-md-2 fs-sm-4  bg-transparent">
+                    <h1 class="frase1 fw-bold"> Tu Confianza significa todo para nosotros ! </h1>
+                    <div class="display-4 fw-bold text-primary " id="counter">0</div>
+                    <h2 class="frase1 fw-bold ">Clientes satisfechos</h2>
+             </div>
+             <div class="col-4 d-flex justify-content-center align-items-center bg-transparent">
+                <div class="card" style="width: 18rem;">
+                    <img src="Multimedia/images/food/verduras.PNG" class="card-img-top" alt="Imagen de Verduras">
+                    <div class="card-body text-center bg-white">
+                        <h5 class="card-title">Importancia de Comer Frutas y Verduras</h5>
+                        <p class="card-text">Alimentos ricos en vitaminas y minerales que son esenciales para una dieta equilibrada.</p>
+                        <a href="#" class="btn btn-dark">Ir al Articulo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer"></div>
+
+    </div>
+    <script>
+        const colorToggle = document.getElementById('colorToggle');
+        const navbar = document.getElementById('navbar');
+    
+        colorToggle.addEventListener('click', () => {
+            navbar.classList.toggle('bg-dark');
+            navbar.classList.toggle('bg-primary');
+        });
+    </script>
+
+        
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+    
+</body>
+
+    </html>
+</HTML:5>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class="header row align-items-center">
+        <!-- Columna para la imagen -->
+        <div class="loggym col-2 ">
+            <img src="Multimedia/images/gimnasio/Logo-EspartaGym.PNG" class="img-fluid shadow rounded bg-transparent" alt="Logo del Gimnasio">
+        </div>
+        <!-- Columna para el título y el navbar -->
+        <div class="row col-10">
+            <!-- Columna para el título -->
+            <div class="titulo col-10 d-flex justify-content-center align-items-center">
+                <!-- Título con efecto sombreado -->
+                <img src="../Multimedia/images/gimnasio/nombreGym.png" class="img-fluid shadow rounded" alt="Nombre del Gimnasio">
+            </div>
+            <div class="col-2 d-flex justify-content-end align-items-center">
+                <!-- Botón para cambiar el color del navbar -->
+                <button class="btn btn-light ms-3" id="colorToggle">
+                    <img src="../Multimedia/images/icons/sol.png" alt="Modo claro" id="iconMode" width="24" height="24">
+                </button>
+            </div>
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded shadow" id="navbar">
+                <div class="container-fluid">
+                    <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                        <ul class="navbar-nav fs-2">
+                            <li class="nav-item">
+                                <a class="nav-link active hover-fluor " aria-current="page" href="#">Inicio</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="clasesDropdown" role="button" aria-expanded="false">
+                                    Clases
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="clasesDropdown">
+                                    <li><a class="dropdown-item" href="#">Musculación</a></li>
+                                    <li><a class="dropdown-item" href="#">Spinning</a></li>
+                                    <li><a class="dropdown-item" href="#">Yoga</a></li>
+                                    <li><a class="dropdown-item" href="#">Crossfit</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link hover-fluor" href="#">Profesores</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link hover-fluor " href="#">Precios</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link hover-fluor" href="#">Novedades</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            // Manejar el submenú con hover
+            $("#clasesDropdown").parent().hover(
+                function () {
+                    $(this).find('.dropdown-menu').addClass('show'); // Mostrar el submenú
+                },
+                function () {
+                    $(this).find('.dropdown-menu').removeClass('show'); // Ocultar el submenú
+                }
+            );
+            
+        });
+    </script>
+
+    <script>
+       $(document).ready(function () {
+            // Cambiar el color del navbar y el ícono del botón
+            $("#colorToggle").on("click", function () {
+                const navbar = $("#navbar");
+                const icon = $("#iconMode");
+                const navLinks = $("#navbarNav .nav-link"); // Seleccionar los enlaces del navbar
+
+                // Alternar entre modo oscuro y claro
+                if (navbar.hasClass("bg-dark")) {
+                    // Cambiar a modo claro
+                    navbar.removeClass("bg-dark navbar-dark").addClass("bg-white navbar-light border border-dark fs-2");
+                    navLinks.removeClass("hover-fluor").addClass("hover-dark"); // Cambiar efecto hover
+                    icon.attr("src", "../Multimedia/images/icons/luna.png"); // Cambiar a luna
+                    icon.attr("alt", "Modo oscuro");
+                } else {
+                    // Cambiar a modo oscuro
+                    navbar.removeClass("bg-white navbar-light border border-dark fs-2").addClass("bg-dark navbar-dark");
+                    navLinks.removeClass("hover-dark").addClass("hover-fluor"); // Cambiar efecto hover
+                    icon.attr("src", "../Multimedia/images/icons/sol.png"); // Cambiar a sol
+                    icon.attr("alt", "Modo claro");
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            // Efecto hover para enlaces en modo oscuro (fluor)
+            $(document).on("mouseenter", ".hover-fluor", function () {
+                $(this).addClass("bg-success text-dark"); // Clase de Bootstrap para texto verde
+            }).on("mouseleave", ".hover-fluor", function () {
+                $(this).removeClass("bg-success text-dark"); // Quitar clase de texto verde
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+           // Efecto hover para enlaces en modo claro (oscuro)
+            $(document).on("mouseenter", ".hover-dark", function () {
+                $(this).addClass(" bg-dark text-white"); // Clase de Bootstrap para texto negro
+            }).on("mouseleave", ".hover-dark", function () {
+                $(this).removeClass("bg-dark text-white"); // Quitar clase de texto negro
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            // Efecto hover para elementos del submenú
+            $(document).on("mouseenter", "#clasesDropdown + .dropdown-menu .dropdown-item", function () {
+                $(this).addClass("bg-success text-dark"); // Fondo verde y texto oscuro
+            }).on("mouseleave", "#clasesDropdown + .dropdown-menu .dropdown-item", function () {
+                $(this).removeClass("bg-success text-dark"); // Quitar fondo verde y texto oscuro
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            // Aplicar efecto fadeIn a la imagen del título
+            $(".titulo img").hide().fadeIn(3000); // Ocultar inicialmente y luego mostrar con fadeIn en 2 segundos
+            $(".loggym img").hide().fadeIn(3000); // Ocultar inicialmente y luego mostrar con fadeIn en 2 segundos
+        });
+    </script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="Bootstrap/js/Bootstrap.min.js"></script>
+    
+</body>
+</html>

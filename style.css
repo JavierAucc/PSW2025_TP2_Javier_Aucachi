@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.video-background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/*para que el video ocupe toda la pantalla si deformarse*/
+    z-index: -1;/*para que el video esté detrás de todo*/
+}
+.container{
+    background-color: rgba(219, 170, 33, 0.5);/*color de fondo del contenedor*/
+}
+.hero{
+    padding: 0%;
+    margin: 0%;
+    border:0%;
+    background-color: transparent;
+}
+.hero-video{
+    padding: 0%;
+    margin: 0%;
+    border:0%;
+    background-color: transparent;
+}
+.mini-hero{
+    padding: 0%;
+    margin: 0%;
+    border:0%;
+    background-color: transparent;
+}
+.icon-size {
+    transition: transform 0.2s;
+}
+.icon-size:hover {
+    transform: scale(1.1);
+}
+.footer{
+    background-color: rgba(37, 37, 36, 0.8);/*color de fondo del contenedor*/
+    
+}
