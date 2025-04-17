@@ -1,0 +1,195 @@
+<HTML:5>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Precios</title>
+  <link rel="stylesheet" href="/Bootstrap/css/bootstrap.min.css">
+ <link rel="stylesheet" href="/Css/precios.css">
+</head>
+<body>
+    <div class="container">
+        <div id="header"></div>
+        <div>
+            <div class="container-precios py-5">
+                <h1 class="text-center fw-bold mb-4">Nuestros Planes a tu Alcance !</h1>
+            
+                <!-- Toggle Switch Mensual/Anual -->
+                <div class="d-flex justify-content-center align-items-center gap-2 mb-4 fw-bold">
+                    <span>Mensual</span>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="planToggle" style="width: 3rem;">
+                        <label class="form-check-label" for="planToggle">Anual (20% descuento)</label>
+                    </div>
+                </div>
+            
+                <!-- Tabla de Precios -->
+                <div class="table-responsive">
+                    <table class="table table-hover table-hover-columns table-bordered align-middle">
+                        <thead class="table-dark">
+                            <tr class="text-center">
+                                <th scope="col">Características</th>
+                                <th scope="col">Plan Básico</th>
+                                <th scope="col">Plan Estándar</th>
+                                <th scope="col">Plan Premium</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center fw-bold">
+                                <th scope="row">Precio</th>
+                                <td>
+                                    <div class="price-monthly">$29.99/mes</div>
+                                    <div class="price-annual">$287.90/año</div>
+                                </td>
+                                <td>
+                                    <div class="price-monthly">$49.99/mes</div>
+                                    <div class="price-annual">$479.90/año</div>
+                                </td>
+                                <td>
+                                    <div class="price-monthly">$79.99/mes</div>
+                                    <div class="price-annual">$767.90/año</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    Acceso al Gimnasio
+                                    <i class="bi bi-info-circle" 
+                                       data-bs-toggle="tooltip" 
+                                       data-bs-placement="right" 
+                                       title="Acceso ilimitado durante el horario de apertura">
+                                    </i>
+                                </th>
+                                <td class="text-center fw-bold">✓</td>
+                                <td class="text-center fw-bold">✓</td>
+                                <td class="text-center fw-bold">✓</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    Clases Grupales
+                                    <i class="bi bi-info-circle" 
+                                       data-bs-toggle="tooltip" 
+                                       data-bs-placement="right" 
+                                       title="Incluye todas las clases grupales disponibles">
+                                    </i>
+                                </th>
+                                <td class="text-center fw-bold">-</td>
+                                <td class="text-center fw-bold">✓</td>
+                                <td class="text-center fw-bold">✓</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    Entrenador Personal
+                                    <i class="bi bi-info-circle" 
+                                       data-bs-toggle="tooltip" 
+                                       data-bs-placement="right" 
+                                       title="Sesiones personalizadas con un entrenador dedicado">
+                                    </i>
+                                </th>
+                                <td class="text-center fw-bold">-</td>
+                                <td class="text-center fw-bold">2/mes</td>
+                                <td class="text-center fw-bold">4/mes</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    Plan Nutricional
+                                    <i class="bi bi-info-circle" 
+                                       data-bs-toggle="tooltip" 
+                                       data-bs-placement="right" 
+                                       title="Plan personalizado por nutricionista certificado">
+                                    </i>
+                                </th>
+                                <td class="text-center fw-bold">-</td>
+                                <td class="text-center fw-bold">Básico</td>
+                                <td class="text-center fw-bold">Completo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Botones de Suscripción -->
+                <div class="row mt-4 g-3">
+                    <div class="col-md-4 text-center">
+                        <a href="/Pages/form.html" class="btn btn-success">Elegir Plan Basico</a>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <a href="/Pages/form.html" class="btn btn-success">Elegir Plan Estandar</a>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <a href="/Pages/form.html" class="btn btn-success">Elegir Plan Premium</a>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div id="footer"></div>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/Bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        // JQuery para cargar footer y header
+       $(document).ready(function() {
+        $("#header").load("/Layouts/header.html");
+        $("#footer").load("/Layouts/footer.html");
+    });
+    </script>
+    <script>
+        // Script para Toggle Mensual/Anual
+        $(document).ready(function() {
+            $('#planToggle').on('change', function() {
+                if ($(this).is(':checked')) {
+                    $('.price-monthly').hide();
+                    $('.price-annual').show();
+                } else {
+                    $('.price-annual').hide();
+                    $('.price-monthly').show();
+                }
+            });
+        });
+    </script>
+    <script>
+        // Script para Resaltado de Tabla
+        $(document).ready(function() {
+            let lastHighlightedCol = null;
+            // Resaltar columna completa
+            $('.table td, .table th').hover(
+                function() {
+                    let index = $(this).index();
+                    if (lastHighlightedCol !== null) {
+                        $('.table tr').each(function() {
+                            $(this).find('td, th').eq(lastHighlightedCol)
+                                .css('background-color','');
+                        });
+                    }
+                    $('.table tr').each(function() {
+                        $(this).find('td, th').eq(index)
+                            .css('background-color', 'rgba(50, 255, 50, 0.3)');
+                    });
+                    lastHighlightedCol = index;
+                },
+                function() {
+                    if (!$(this).is(':hover')) {
+                        let index = $(this).index();
+                        $('.table tr').each(function() {
+                            $(this).find('td, th').eq(index)
+                                .css('background-color', '');
+                        });
+                        lastHighlightedCol = null;
+                    }
+                }
+            );
+        });
+    </script>
+        
+    <script>
+        //Script para Tooltips
+        $(document).ready(function() {
+            // Inicializar todos los tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
+</body>
+</html>
+</HTML:5>

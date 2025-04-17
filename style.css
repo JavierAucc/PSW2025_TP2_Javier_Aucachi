@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
 }
+/* Fondo Page index*/
 .video-background{
     position: fixed;
     top: 0;
@@ -11,9 +12,11 @@ body{
     object-fit: cover;/*para que el video ocupe toda la pantalla si deformarse*/
     z-index: -1;/*para que el video esté detrás de todo*/
 }
+
 .container{
     background-color: rgba(219, 170, 33, 0.5);/*color de fondo del contenedor*/
 }
+/*Index*/
 .hero{
     padding: 0%;
     margin: 0%;

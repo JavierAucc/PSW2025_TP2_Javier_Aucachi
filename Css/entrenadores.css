@@ -1,0 +1,43 @@
+
+body {
+    background-image: url('/Multimedia/images/entrenadores/fondoEntrenadores.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.container{
+    background-color: rgba(211, 78, 25, 0.3);
+}
+/* Efecto en  para estrellas*/
+.star-rating .star {
+    font-size: 1.4rem;
+    opacity: 0;
+    transition: opacity 0.3s ease, color 0.3s ease;
+    color: #ffc107; /* Amarillo Bootstrap */
+    display: inline-block;
+    animation: spin 2s linear infinite;
+}
+
+/* Aparece en secuencia */
+.star-rating .filled {
+    opacity: 1;
+    animation-delay: 0s;
+}
+
+/* Estrellas vacías siguen grises */
+.star-rating .empty {
+    color: #6c757d;
+    opacity: 1;
+    animation: none;
+}
+
+/* Animación de rotación */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

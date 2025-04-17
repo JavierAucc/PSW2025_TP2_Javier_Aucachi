@@ -1,0 +1,237 @@
+<HTML:5>
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Formulario de Inscripción</title>
+            <link rel="stylesheet" href="/Css/form.css">
+            <link rel="stylesheet" href="/Bootstrap/css/bootstrap.min.css">
+        </head>
+        <body>
+            <div class="container">
+                <div id="header"></div>
+                <div class="row">
+                        <div class="col-4 d-flex justify-content-center align-items-center">
+                            <div class="card " style="width: 18rem;">
+                                <img src="/Multimedia/images/frases/frase2.PNG" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <p class="card-text fw-bold">Algunas personas quieren que suceda, otras desean que suceda, otras lo hacen suceder</p>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="formulario col-4 ">
+                            <div class=" mt-5 mb-5">
+                                <h2 class=" text-light fw-bold">Formulario de Contacto</h2>
+                                <p class=" text-light fw-bold">Completa el formulario para enviarnos un mensaje.</p>
+                            
+                                <!-- El atributo novalidate deshabilita la validación nativa del navegador -->
+                                <!-- La clase needs-validation activa los estilos de validación de Bootstrap -->
+                                <form id="contactForm" class="needs-validation" novalidate>
+                                    <!-- Campo Nombre -->
+                                    <div class="mb-3 text-light">
+                                        <label for="nombre" class="form-label">Nombre Completo</label>
+                                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                        <div class="valid-feedback ">
+                                            ¡Correcto!
+                                        </div>
+                                        <div class="invalid-feedback ">
+                                            Por favor, ingresa tu nombre completo.
+                                        </div>
+                                    </div>
+                                    <!-- Campo Email -->
+                                    <div class="mb-3 text-light">
+                                        <label for="email" class="form-label">Correo Electrónico</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                        <div class="valid-feedback">
+                                            ¡Email válido!
+                                        </div>
+                                        <div class="invalid-feedback" id="emailError">
+                                            Por favor, ingresa un correo electrónico válido.
+                                        </div>
+                                    </div>
+                            
+                                    <!-- Campo Clase -->
+                                    <div class="mb-3 text-light">
+                                        <label for="clase" class="form-label">Clase</label> <!-- Cambiado el label -->
+                                        <select class="form-select" id="clase" name="clase" required>
+                                            <!-- Opción por defecto, deshabilitada y seleccionada -->
+                                            <option selected disabled value="">Selecciona una Clase...</option>
+                                            <!-- Opciones de clase -->
+                                            <option value="musculacion">Musculación</option>
+                                            <option value="yoga">Yoga</option>
+                                            <option value="spinning">Spinning</option>
+                                            <option value="crossfit">CrossFit</option>
+                                        </select>
+                                        <div class="valid-feedback">
+                                            ¡Clase seleccionada! <!-- Mensaje de validación actualizado -->
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Por favor, selecciona una clase de la lista. <!-- Mensaje de error actualizado -->
+                                        </div>
+                                    </div>
+                                    <!-- Botón de Envío con Spinner -->
+                                    <button type="submit" class="btn btn-primary" id="submitButton">
+                                        <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true" id="loadingSpinner"></span>
+                                        <span id="buttonText">Enviar Mensaje</span>
+                                    </button>
+                                </form>
+                            </div>
+                            
+                            <!-- Modal de Confirmación -->
+                            <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="confirmationModalLabel">¡Envío Exitoso!</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body fw-bold">
+                                    Tu mensaje ha sido enviado correctamente. Nos pondremos en contacto contigo pronto.
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <!-- fin del formulario-->
+                        <div class="col-4 d-flex justify-content-center align-items-center">
+                            <div class="card " style="width: 18rem;">
+                                <img src="/Multimedia/images/frases/frase1.PNG" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <p class="card-text fw-bold">Hoy haré lo que otros no, para que mañana pueda lograr lo que otros no pueden</p>
+                                </div>
+                              </div>
+                        </div>
+                </div>
+                
+                
+                <div id="footer"></div>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="/Bootstrap/js/bootstrap.min.js"></script>
+
+            <script>
+                // JQuery para cargar footer y header
+                $(document).ready(function() {
+                    $("#header").load("/Layouts/header.html");
+                    $("#footer").load("/Layouts/footer.html");
+                });
+            </script>
+            <script>
+                //JQuery para efectos del form
+                $(document).ready(function() {
+                       
+    // --- Validación en Tiempo Real (Inputs y Select) ---
+    // Escucha eventos 'input' en campos de texto/email y 'change' en el select
+    $('#contactForm').on('input change', '.form-control[required], .form-select[required]', function() {
+        validateField($(this));
+    });
+
+    // Función Refinada para Validar un Campo (Input, Textarea, Select)
+    function validateField(field) {
+        let isValid = true;
+        let value = field.val(); // No usamos trim() aquí para select
+
+        // Comprobación unificada para requerido (funciona para input, textarea y select)
+        // Un select requerido es inválido si su valor es "" (la opción "Selecciona...")
+        if (field.prop('required') && (value === null || value.trim() === '')) {
+             isValid = false;
+        }
+
+        // Validación específica para formato de email (si aplica)
+        if (isValid && field.attr('type') === 'email' && value.trim() !== '') {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(value.trim())) {
+                isValid = false;
+            }
+        }
+
+        // Aplica clases de Bootstrap basado en la validez
+        if (!isValid) {
+            field.removeClass('is-valid').addClass('is-invalid');
+        } else {
+            field.removeClass('is-invalid').addClass('is-valid');
+        }
+        return isValid;
+    }
+
+    // --- Envío del Formulario ---
+    $('#contactForm').on('submit', function(event) {
+        event.preventDefault(); // Previene el envío normal
+
+        let form = $(this);
+        let isValidForm = true;
+
+        // Resetea estados visuales previos
+        form.removeClass('was-validated');
+        form.find('.form-control, .form-select').removeClass('is-invalid is-valid'); // Limpia clases antes de validar
+
+        // Valida TODOS los campos requeridos (incluyendo select) antes de enviar
+        form.find('.form-control[required], .form-select[required]').each(function() {
+            // Ejecuta la validación y actualiza isValidForm si algún campo falla
+            if (!validateField($(this))) {
+                isValidForm = false;
+            }
+        });
+
+        // Añade la clase para que Bootstrap muestre todos los mensajes de feedback
+        form.addClass('was-validated');
+
+        // Si algún campo falló la validación, detiene el proceso
+        if (!isValidForm) {
+             console.log("Formulario inválido.");
+            return;
+        }
+        const submitButton = $('#submitButton');
+        const spinner = $('#loadingSpinner');
+        const buttonText = $('#buttonText');
+
+        // Mostrar Spinner y deshabilitar botón
+        submitButton.prop('disabled', true);
+        spinner.removeClass('d-none'); // Muestra el spinner (equivalente a .show() para d-none)
+        if(buttonText.length) buttonText.text('Enviando...'); // Cambia texto si el span existe
+
+        // Simulación de envío (reemplazar con tu llamada AJAX)
+        setTimeout(function() {
+            // Ocultar Spinner y rehabilitar botón
+            spinner.addClass('d-none'); // Oculta el spinner
+             if(buttonText.length) buttonText.text('Enviar Mensaje'); // Restaura texto
+            submitButton.prop('disabled', false);
+
+            // Mostrar Modal de Confirmación
+            // Asegúrate que tu modal tenga id="confirmationModal"
+            var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+            confirmationModal.show();
+
+            // Resetear formulario y estados de validación
+            form[0].reset();
+            form.removeClass('was-validated');
+            form.find('.form-control, .form-select').removeClass('is-valid is-invalid');
+
+        }, 1500); // Simula 1.5 segundos de espera
+    });
+ });
+     </script>
+     <script>
+        $(document).ready(function() {
+        $('.card').hover(
+            function() {
+                $(this).addClass('shadow-lg').css({
+                    transform: 'scale(1.1)', // Agrandar la card
+                    transition: 'transform 0.3s ease-in-out' // Transición suave
+                });
+            },
+            function() {
+                $(this).removeClass('shadow-lg').css({
+                    transform: 'scale(1)', // Volver al tamaño original
+                    transition: 'transform 0.3s ease-in-out' // Transición suave
+                });
+            }
+        );
+    })
+     </script>
+        </body>
+    </html>
+</HTML:5>

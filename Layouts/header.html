@@ -12,19 +12,19 @@
     <div class="header row align-items-center">
         <!-- Columna para la imagen -->
         <div class="loggym col-2 ">
-            <img src="Multimedia/images/gimnasio/logoEsparta.PNG" class="img-fluid shadow rounded bg-transparent" alt="Logo del Gimnasio">
+            <img src="/Multimedia/images/gimnasio/logoEsparta.PNG" class="img-fluid shadow rounded bg-transparent" alt="Logo del Gimnasio">
         </div>
         <!-- Columna para el título y el navbar -->
         <div class="row col-10">
             <!-- Columna para el título -->
             <div class="titulo col-10 d-flex justify-content-center align-items-center">
                 <!-- Título con efecto sombreado -->
-                <img src="Multimedia/images/gimnasio/nombreGym.png" class="img-fluid shadow rounded" alt="Nombre del Gimnasio">
+                <img src="/Multimedia/images/gimnasio/nombreGym.png" class="img-fluid shadow rounded" alt="Nombre del Gimnasio">
             </div>
             <div class="col-2 d-flex justify-content-end align-items-center">
                 <!-- Botón para cambiar el color del navbar -->
                 <button class="btn btn-light ms-3" id="colorToggle">
-                    <img src="Multimedia/images/icons/sol.png" alt="Modo claro" id="iconMode" width="24" height="24">
+                    <img src="/Multimedia/images/icons/sol.png" alt="Modo claro" id="iconMode" width="24" height="24">
                 </button>
             </div>
             <!-- Navbar -->
@@ -36,27 +36,27 @@
                     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                         <ul class="navbar-nav fs-2">
                             <li class="nav-item">
-                                <a class="nav-link active hover-fluor " aria-current="page" href="#">Inicio</a>
+                                <a class="nav-link active hover-fluor " aria-current="page" href="/index.html">Inicio</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="clasesDropdown" role="button" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="/Pages/clases.html" id="clasesDropdown" role="button" aria-expanded="false">
                                     Clases
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="clasesDropdown">
-                                    <li><a class="dropdown-item" href="#">Musculación</a></li>
-                                    <li><a class="dropdown-item" href="#">Spinning</a></li>
-                                    <li><a class="dropdown-item" href="#">Yoga</a></li>
-                                    <li><a class="dropdown-item" href="#">Crossfit</a></li>
+                                    <li><a class="dropdown-item" href="/Pages/clases.html">Musculación</a></li>
+                                    <li><a class="dropdown-item" href="/Pages/clases.html">Spinning</a></li>
+                                    <li><a class="dropdown-item" href="/Pages/clases.html">Yoga</a></li>
+                                    <li><a class="dropdown-item" href="/Pages/clases.html">Crossfit</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link hover-fluor" href="#">Profesores</a>
+                                <a class="nav-link hover-fluor" href="/Pages/coaches.html">Profesores</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link hover-fluor " href="#">Precios</a>
+                                <a class="nav-link hover-fluor " href="/Pages/prices.html">Precios</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link hover-fluor" href="#">Novedades</a>
+                                <a class="nav-link hover-fluor" href="/Pages/blog.html">Novedades</a>
                             </li>
                         </ul>
                     </div>
@@ -92,13 +92,13 @@
                     // Cambiar a modo claro
                     navbar.removeClass("bg-dark navbar-dark").addClass("bg-white navbar-light border border-dark fs-2");
                     navLinks.removeClass("hover-fluor").addClass("hover-dark"); // Cambiar efecto hover
-                    icon.attr("src", "Multimedia/images/icons/luna.png"); // Cambiar a luna
+                    icon.attr("src", "../Multimedia/images/icons/luna.png"); // Cambiar a luna
                     icon.attr("alt", "Modo oscuro");
                 } else {
-                    // Cambiar a modo oscuro
+                    // Cambiar a modo oscuro probando
                     navbar.removeClass("bg-white navbar-light border border-dark fs-2").addClass("bg-dark navbar-dark");
                     navLinks.removeClass("hover-dark").addClass("hover-fluor"); // Cambiar efecto hover
-                    icon.attr("src", "Multimedia/images/icons/sol.png"); // Cambiar a sol
+                    icon.attr("src", "../Multimedia/images/icons/sol.png"); // Cambiar a sol
                     icon.attr("alt", "Modo claro");
                 }
             });

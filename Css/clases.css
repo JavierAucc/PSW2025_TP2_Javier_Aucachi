@@ -1,0 +1,10 @@
+body {
+    background-image: url('/Multimedia/images/clases/fondoClases.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.container{
+    background-color: rgba(41, 35, 32, 0.6);
+}

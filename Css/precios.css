@@ -1,0 +1,29 @@
+body {
+    background-image: url('/Multimedia/images/gimnasio/fondoPrecios.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.container{
+    background-color:rgba(177, 64, 83, 0.5);;
+}
+/* Estilos para resaltar columnas en hover */
+.table-hover-columns tbody tr td:hover,
+.table-hover-columns tbody tr th:hover {
+    background-color: rgba(231, 136, 12, 0.1);
+}
+
+/* Estilos para los precios */
+.price-annual {
+    display: none;
+}
+
+/* Estilo para el toggle switch */
+.form-check-input:checked {
+    background-color: #39dd18;
+    border-color: #1dc44f;
+}
+.container-precios{
+    background-color: rgba(144, 248, 248, 0.5);
+}

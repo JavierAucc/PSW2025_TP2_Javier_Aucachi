@@ -1,0 +1,15 @@
+
+body {
+    background-image: url('/Multimedia/images/frases/fondo-form.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.container{
+    background-color: rgba(229, 208, 245, 0.5);
+}
+
+.formulario{
+    background-color: rgba(240, 236, 243, 0.5);
+}
