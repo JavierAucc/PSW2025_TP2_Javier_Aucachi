@@ -1,5 +1,5 @@
 body {
-    background-image: url('/Multimedia/images/clases/fondoClases.jpg');
+    background-image: url('../multimedia/images/clases/fondoClases.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

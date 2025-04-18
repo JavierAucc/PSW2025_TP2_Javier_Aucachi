@@ -1,6 +1,6 @@
 
 body {
-    background-image: url('/Multimedia/images/entrenadores/fondoEntrenadores.jpg');
+    background-image: url('../multimedia/images/entrenadores/fondoEntrenadores.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

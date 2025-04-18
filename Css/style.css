@@ -13,7 +13,7 @@ body{
     z-index: -1;/*para que el video esté detrás de todo*/
 }
 
-.container{
+#indexPage .container{
     background-color: rgba(219, 170, 33, 0.5);/*color de fondo del contenedor*/
 }
 /*Index*/

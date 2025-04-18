@@ -1,8 +1,11 @@
 //script para llamar header y footer
 $(document).ready(function() {
-    $("#header").load("Layouts/header.html");
-    
-    $("#footer").load("Layouts/footer.html");
+    $("#header").load("../layouts/header.html",function(){
+        $.getScript(headers.js);
+    });
+    $("#footer").load("../layouts/footer.html",function(){
+        $.getScript(footer.js);
+    });
 });
 //script para animar las frases
 $(document).ready(function() {

@@ -1,17 +1,17 @@
 body {
-    background-image: url('/Multimedia/images/gimnasio/fondoPrecios.jpg');
+    background-image: url('../multimedia/images/gimnasio/fondoPrecios.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
 .container{
-    background-color:rgba(177, 64, 83, 0.5);;
+    background-color:rgba(219, 124, 140, 0.5);;
 }
 /* Estilos para resaltar columnas en hover */
 .table-hover-columns tbody tr td:hover,
 .table-hover-columns tbody tr th:hover {
-    background-color: rgba(231, 136, 12, 0.1);
+    background-color: rgba(228, 219, 209, 0.1);
 }
 
 /* Estilos para los precios */
@@ -21,7 +21,7 @@ body {
 
 /* Estilo para el toggle switch */
 .form-check-input:checked {
-    background-color: #39dd18;
+    background-color: #15da15;
     border-color: #1dc44f;
 }
 .container-precios{

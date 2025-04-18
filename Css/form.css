@@ -1,6 +1,6 @@
 
 body {
-    background-image: url('/Multimedia/images/frases/fondo-form.jpg');
+    background-image: url('../multimedia/images/frases/fondo-form.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

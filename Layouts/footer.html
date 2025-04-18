@@ -1,11 +1,12 @@
+<HTML:5> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Footer</title>
-    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <div class="footer row ">
@@ -39,19 +40,19 @@
             <h5 class="fw-bold text-light ">Síguenos en nuestras redes sociales</h5>
             <div class="d-flex justify-content-center flex-wrap">
                 <a href="#" class="icon-size bg-transparent me-2">
-                    <img src="/Multimedia/images/icons/facebook-icon.png" alt="Facebook" class="img-fluid" style="width: 32px; height: 32px;">
+                    <img src="../multimedia/images/icons/facebook-icon.png" alt="Facebook" class="img-fluid" style="width: 32px; height: 32px;">
                 </a>
                 <a href="#" class="icon-size bg-transparent me-2">
-                    <img src="/Multimedia/images/icons/instagram-icon.png" alt="Instagram" class="img-fluid" style="width: 32px; height: 32px;">
+                    <img src="../multimedia/images/icons/instagram-icon.png" alt="Instagram" class="img-fluid" style="width: 32px; height: 32px;">
                 </a>
                 <a href="#" class="icon-size bg-transparent me-2">
-                    <img src="/Multimedia/images/icons/twitter-icon.png" alt="Twitter" class="img-fluid" style="width: 32px; height: 32px;">
+                    <img src="../multimedia/images/icons/twitter-icon.png" alt="Twitter" class="img-fluid" style="width: 32px; height: 32px;">
                 </a>
                 <a href="#" class="icon-size bg-transparent me-2">
-                    <img src="/Multimedia/images/icons/tiktok-icon.png" alt="TikTok" class="img-fluid" style="width: 32px; height: 32px;">
+                    <img src="../multimedia/images/icons/tiktok-icon.png" alt="TikTok" class="img-fluid" style="width: 32px; height: 32px;">
                 </a>
                 <a href="#" class="icon-size bg-transparent me-2">
-                    <img src="/Multimedia/images/icons/youtube-icon.png" alt="YouTube" class="img-fluid" style="width: 32px; height: 32px;">
+                    <img src="../multimedia/images/icons/youtube-icon.png" alt="YouTube" class="img-fluid" style="width: 32px; height: 32px;">
                 </a>
             </div>
             <p class="text-light ">Estamos aquí para ayudarte con cualquier consulta.</p>
@@ -71,35 +72,10 @@
             </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function () {
-            $('#subscriptionForm').on('submit', function (e) {
-                e.preventDefault(); // Evita el envío del formulario
-
-                // Eliminar cualquier spinner existente para evitar duplicados
-                $('#loadingSpinner').remove();
-
-                // Mostrar spinner de carga
-                const spinner = `
-                    <div class="text-center my-3" id="loadingSpinner">
-                        <div class="spinner-border text-primary" role="status">
-                            <span class="visually-hidden">Cargando...</span>
-                        </div>
-                    </div>
-                `;
-                $(this).append(spinner);
-
-                // Simular un retraso de carga antes de mostrar el modal
-                setTimeout(() => {
-                    $('#loadingSpinner').remove(); // Eliminar el spinner
-                    const modal = new bootstrap.Modal(document.getElementById('thankYouModal')); // Inicializar el modal
-                    modal.show(); // Mostrar el modal
-                }, 2000); // 2 segundos de retraso
-            });
-        });
-    </script>
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="Bootstrap/js/bootstrap.min.js"></script>
-
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../jquery/footer.js"></script>
 </body>
 </html>
+</HTML:5>

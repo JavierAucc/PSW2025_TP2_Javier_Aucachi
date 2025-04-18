@@ -1,5 +1,5 @@
 body {
-    background-image: url('/Multimedia/images/gimnasio/fondoBlog.jpg');
+    background-image: url('../multimedia/images/gimnasio/fondoBlog.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -7,6 +7,9 @@ body {
 }
 .container{
     background-color:rgba(189, 188, 189, 0.795);;
+}
+.blog-title{
+    background-color: rgb(18, 168, 168, 0.5);
 }
 .article-title {
     font-family: 'Times New Roman', serif;

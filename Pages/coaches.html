@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrenadores</title>
-    <link rel="stylesheet" href="/Bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/Css/entrenadores.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/entrenadores.css">
 </head>
 <body>
     <div class="container">
@@ -19,7 +19,7 @@
                     <div class="card card2-wrapper h-100 border border-dark shadow">
                         <div class="card2-front">
                             <div class="ratio ratio-4x3">
-                                <img src="/Multimedia/images/entrenadores/entrenador-crossfit.PNG" 
+                                <img src="../multimedia/images/entrenadores/entrenador-crossfit.PNG" 
                                      class="card-img-top img-fluid " 
                                      alt="Entrenador CrossFit">
                             </div>
@@ -65,7 +65,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="/Pages/form.html" class="btn btn-primary mt-auto">Contactar</a>
+                                <a href="form.html" class="btn btn-primary mt-auto">Contactar</a>
                             </div>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                     <div class="card card2-wrapper h-100 border border-dark shadow">
                         <div class="card2-front">
                             <div class="ratio ratio-4x3">
-                                <img src="/Multimedia/images/entrenadores/entrenador-musculacion.PNG" 
+                                <img src="../multimedia/images/entrenadores/entrenador-musculacion.PNG" 
                                      class="card-img-top img-fluid" 
                                      alt="Entrenador musculación">
                             </div>
@@ -121,7 +121,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="/Pages/form.html" class="btn btn-primary mt-auto">Contactar</a>
+                                <a href="form.html" class="btn btn-primary mt-auto">Contactar</a>
                             </div>
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                     <div class="card card2-wrapper h-100 border border-dark shadow">
                         <div class="card2-front">
                             <div class="ratio ratio-4x3">
-                                <img src="/Multimedia/images/entrenadores/entrenador-sppining.PNG" 
+                                <img src="../multimedia/images/entrenadores/entrenador-sppining.PNG" 
                                      class="card-img-top img-fluid" 
                                      alt="Entrenador spinning">
                             </div>
@@ -177,7 +177,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="/Pages/form.html" class="btn btn-primary mt-auto">Contactar</a>
+                                <a href="form.html" class="btn btn-primary mt-auto">Contactar</a>
                             </div>
                         </div>
                     </div>
@@ -188,7 +188,7 @@
                     <div class="card card2-wrapper h-100 border border-dark shadow">
                         <div class="card2-front">
                             <div class="ratio ratio-4x3">
-                                <img src="/Multimedia/images/entrenadores/entrenadora-yoga.PNG" 
+                                <img src="../multimedia/images/entrenadores/entrenadora-yoga.PNG" 
                                      class="card-img-top img-fluid" 
                                      alt="Entrenadora de Yoga">
                             </div>
@@ -233,7 +233,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="/Pages/form.html" class="btn btn-primary mt-auto">Contactar</a>
+                                <a href="form.html" class="btn btn-primary mt-auto">Contactar</a>
                             </div>
                         </div>
                     </div>
@@ -244,7 +244,7 @@
                     <div class="card card2-wrapper h-100 border border-dark shadow">
                         <div class="card2-front">
                             <div class="ratio ratio-4x3">
-                                <img src="/Multimedia/images/entrenadores/entrenador-gral.PNG" 
+                                <img src="../multimedia/images/entrenadores/entrenador-gral.PNG" 
                                      class="card-img-top img-fluid" 
                                      alt="Entrenador General">
                             </div>
@@ -289,7 +289,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="/Pages/form.html" class="btn btn-primary mt-auto">Contactar</a>
+                                <a href="form.html" class="btn btn-primary mt-auto">Contactar</a>
                             </div>
                         </div>
                     </div>
@@ -300,91 +300,9 @@
         <div id="footer"></div>
 
     </div>
-
-    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/Bootstrap/js/bootstrap.min.js"></script>
-    
-    <script>
-        // JQuery para cargar footer y header
-       $(document).ready(function() {
-        $("#header").load("/Layouts/header.html");
-        $("#footer").load("/Layouts/footer.html");
-    });
-    </script>
-    
-    <script>
-        $(document).ready(function() {
-            // Hover para rotar/mostrar info trasera
-            $('#rotating-cards .card2-wrapper').hover(
-                function() {
-                    // Mouse enter
-                    const front = $(this).find('.card2-front');
-                    const back = $(this).find('.card2-back');
-    
-                    front.fadeOut(300, function() {
-                        back.removeClass('d-none').fadeIn(300);
-                    });
-                },
-                function() {
-                    // Mouse leave
-                    const front = $(this).find('.card2-front');
-                    const back = $(this).find('.card2-back');
-    
-                    back.fadeOut(300, function() {
-                        back.addClass('d-none');
-                        front.fadeIn(300);
-                    });
-                }
-            );
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-        // Esto se puede adaptar al evento que muestra .card2-back (por ejemplo al hacer hover o click)
-        $('.card2-back').on('mouseenter', function () {
-            $(this).find('.progress-bar').each(function() {
-                var $this = $(this);
-                var percentage = $this.data('percentage');
-
-                $this.stop().animate({
-                    width: percentage + '%'
-                }, 1000);
-            });
-        });
-
-        // Opcional: reiniciar al salir
-        $('.card2-back').on('mouseleave', function () {
-            $(this).find('.progress-bar').stop().animate({
-                width: '0%'
-            }, 500);
-        });
-    });
-    </script>
-    <script>
-        $(document).ready(function () {
-            $('.star-rating').each(function () {
-                const rating = $(this).data('rating');
-                const stars = $(this).find('.star');
-
-                stars.each(function (i) {
-                    const star = $(this);
-                    setTimeout(() => {
-                        if (i < rating) {
-                            star.text('★')
-                                .removeClass('empty')
-                                .addClass('filled');
-                        } else {
-                            star.text('☆')
-                                .removeClass('filled')
-                                .addClass('empty');
-                        }
-                        star.css('opacity', 1);
-                    }, i * 150);
-                });
-            });
-        });
-    </script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../jquery/coaches.js"></script>
 </body>
 </html>
 </HTML:5>
